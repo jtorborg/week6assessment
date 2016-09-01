@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Omicron Routing</title>
+
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/displayheroController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/heroController.js"></script>
+    <link rel="stylesheet" href="../styles/stylesheet.css" ></link>
+
+
+  </head>
+  <body>
+<div>
+
+      <h1>SUPER HERO</h1>
+      <div ng-include="'/views/partials/nav.html'"></div>
+      <main ng-view></main>
+      <h3>###</h3>
+
+
+
+
+
+
+        <div ng-controller="heroController">
+          <form>
+              <label for="alias">Alias:</label>
+              <input type="text" ng-model="hero.alias" id="alias" />
+              <label for="first_name">First Name:</label>
+              <input type="text" ng-model="hero.first_name" id="first_name" />
+              <label for="last_name">Last Name:</label>
+              <input type="text" ng-model="hero.last_name" id="last_name" />
+              <label for="city">City:</label>
+              <input type="text" ng-model="hero.city" id="city" />
+
+              <label>Primary Power:</label>
+            <form>
+              <select ng-model="hero.power_name" ng-options="power.power_name for power in powers">
+                  <option  value="">Select</option>
+                  <p>{{primary_power}}</p>
+              </select>
+
+                  <button ng-click="addHero()">Add Hero Info</button>
+          </form>
+
+          <form>
+
+              </select>
+
+              <button ng-click="showHero()">Show Heroes</button>
+
+            </select>
+          </form>
+
+
+          <form>
+
+              </select>
+
+              <button ng-click="deleteHero()">Delete Hero</button>
+
+            </select>
+          </form>
+
+
+
+
+        </div>
+
+
+</div>
+
+
+
+
+
+  </body>
+</html>
